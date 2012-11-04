@@ -1,5 +1,5 @@
 <?php
-$mysqli = new mysqli('localhost', '°èÁ¤¸í', 'ÆÐ½º¿öµå', 'µðºñ¸í');
+$mysqli = new mysqli('localhost', 'ê³„ì •ëª…', 'íŒ¨ìŠ¤ì›Œë“œ', 'ë””ë¹„ëª…');
 if($mysqli->connect_errno) die('Connect failed: '.$mysqli->connect_error);
 if(!$mysqli->set_charset('utf8')) die('Error loading character set utf8: '.$mysqli->error);
 
@@ -9,14 +9,14 @@ function query($qry, $mode='APPLY') {
   if($mode == 'TEST') { echo "<font color=red>$qry;</font><br />"; return; }
   global $mysqli;
   $result = $mysqli->query($qry);
-  if($result === false) die("Query: [[ $qry ]] ¡æ Error: ".$mysqli->error);
+  if($result === false) die("Query: [[ $qry ]] â†’ Error: ".$mysqli->error);
   return $result ;
 }
 
 function query_all($qry) {
   global $mysqli;
   $result = $mysqli->query($qry);
-  if($result === false) die("Query: [[ $qry ]] ¡æ Error: ".$mysqli->error);
+  if($result === false) die("Query: [[ $qry ]] â†’ Error: ".$mysqli->error);
   $arr = array();
   eval('while(@$r = $result->fetch_assoc()) array_push($arr, $r);');
   return $arr;
@@ -25,7 +25,7 @@ function query_all($qry) {
 function query_arr($qry) {
   global $mysqli;
   $result = $mysqli->query($qry);
-  if($result === false) die("Query: [[ $qry ]] ¡æ Error: ".$mysqli->error);
+  if($result === false) die("Query: [[ $qry ]] â†’ Error: ".$mysqli->error);
   $arr = array();
   while($row = $result->fetch_row()) $arr[] = $row[0];
   return $arr;
@@ -34,7 +34,7 @@ function query_arr($qry) {
 function query_one($qry) {
   global $mysqli;
   $result = $mysqli->query($qry);
-  if($result === false) die("Query: [[ $qry ]] ¡æ Error: ".$mysqli->error);
+  if($result === false) die("Query: [[ $qry ]] â†’ Error: ".$mysqli->error);
   $row = $result->fetch_row();
   return $row[0];
 }
