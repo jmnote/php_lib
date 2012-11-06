@@ -1,4 +1,5 @@
 <?php
+// http://jmnote.com/wiki/Lib_utf8.php
 function utf2euc($str) { return iconv("UTF-8","cp949//IGNORE", $str); }
 function euc2utf($str) { return iconv("cp949","UTF-8//IGNORE", $str); }
 function utf8_charAt($str, $num) { return mb_substr($str, $num, 1, 'UTF-8'); }

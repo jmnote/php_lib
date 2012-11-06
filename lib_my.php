@@ -1,4 +1,5 @@
 <?php
+// http://jmnote.com/wiki/Lib_my.php
 $mysqli = new mysqli('localhost', '계정명', '패스워드', '디비명');
 if($mysqli->connect_errno) die('Connect failed: '.$mysqli->connect_error);
 if(!$mysqli->set_charset('utf8')) die('Error loading character set utf8: '.$mysqli->error);
