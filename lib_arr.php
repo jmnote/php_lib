@@ -1,4 +1,5 @@
 <?php
+// http://jmnote.com/wiki/Lib_arr.php
 /*
 // useful expression
 $arr = array_map('trim', $arr); // trim strings
