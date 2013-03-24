@@ -14,13 +14,13 @@ function query($qry, $mode='APPLY') {
   return $result ;
 }
 
-function query_all($qry) {
+function query_rows($qry) {
   global $mysqli;
   $result = $mysqli->query($qry);
   if($result === false) die("Query: [[ $qry ]] → Error: ".$mysqli->error);
-  $arr = array();
-  eval('while(@$r = $result->fetch_assoc()) array_push($arr, $r);');
-  return $arr;
+  $rows = array();
+  eval('while(@$row = $result->fetch_assoc()) array_push($rows, $row);');
+  return $rows;
 }
 
 function query_arr($qry) {
